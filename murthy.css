@@ -1,0 +1,109 @@
+body{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(mypicture.jpg);
+background-repeat:repeat;
+	background-size:cover;
+	overflow-x:hidden;
+}
+
+
+
+.nav-list{
+	position: absolute;
+	top: 5%;
+	left: 31%;
+  width:92.5%;
+  max-width:30em;
+  text-align:center;
+  margin:auto;
+ 
+}
+ li{
+  list-style:none;
+  display:inline-block;
+    background:rgba(256,256,256,0.5);
+    padding:0.7em;
+    margin:0 1%;
+  }
+
+  li.active{
+    background-color:rgba(256,256,256,0.95);
+  }
+
+
+
+.panel{
+	text-align: center;
+
+  padding:1em;
+  width:89.5%;
+  margin:auto;
+  max-width:25em;
+  height: 15em;
+  position: absolute;
+  top: 25%;
+  color: rgb(200,200,200);
+  left: 16%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+.panel2{
+	text-align: center;
+
+  padding:1em;
+  width:89.5%;
+  margin:auto;
+  max-width:25em;
+  height: 20em;
+  position: absolute;
+  top: 25%;
+  color: rgb(200,200,200);
+  left: 56%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+
+
+input{
+  width:100%;
+  box-sizing:border-box;
+  font-size:1em;
+  margin-top:0.5em;
+  padding:0.5em;
+}
+
+input:focus{
+  outline:none;
+}
+
+input::after{
+  width:100%;
+  height:10px;
+  background:red;
+}
+input
+
+
+
+
+h1{
+  font-size:1.2em;
+  text-align:center;
+}
+
+
+input[type="text"]{
+	 margin: 0 0 15px;
+  padding: 13px;
+}
+
+input[type="submit"]{
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	background-color: blue;
+	width: 100%;
+	padding: 15px;
+	color: white;
+	font-size: 14px;
+	margin:none;
+	border:none;
+}
