@@ -30,17 +30,17 @@
     </form>
 </div>
     <div id="contact-panel" class="panel2">
-        <form id="contact" action="#">
+        <form id="contact" action="#" name="myform">
             <h1>Add a new contact</h1>
             <div>
                 <label>
-                    <input type="text" name="person" id="name" placeholder="John Smith" />
+                    <input type="text" name="person" id="name" placeholder="narayan" required />
                 </label>
                 <label>
-                    <input type="text" name="phone" id="name" placeholder="1234567" />
+                    <input type="text" name="phone" id="numberid" placeholder="1234567" onkeyup="number_validate()"/>
                 </label>
                 <label>
-                    <input type="text" name="email" id="name" placeholder="john@example.com" />
+                    <input type="text" name="email" id="mailid" placeholder="narayan@gmail.com" onkeyup="mail_validate()" />
                 </label>
             </div>
             <div>
@@ -48,7 +48,7 @@
             </div>
         </form>
     </div>
-<div id = "show-panel" class="panel">
+<div id = "show-panel" class="panel" style="margin-bottom: 4em;">
   
 </div>
 
@@ -178,7 +178,7 @@ document.getElementById('js-show-all').addEventListener('click', function(){
     console.log(contacts);
     if(contacts.length>0){
       for(var i = 0;i<contacts.length;i++){
-      document.getElementById('show-panel').innerHTML += '<div class="contact-item">Name:'+contacts[i].name+'<br>Phone:'+contacts[i].phone+'<br>Email:'+contacts[i].email+'</div><hr>';
+      document.getElementById('show-panel').innerHTML += '<div class="contact-item" id = "contact'+i+'" >Name:'+contacts[i].name+'<br>Phone:'+contacts[i].phone+'<br>Email:'+contacts[i].email+'<br> <a href ="#"><p onclick="del('+i+')">Delete Contact?</p></a><hr></div>';
       }
     }else{
       document.getElementById('show-panel').innerHTML += '<div class="contact-item">You have no contacts. Why not add  a few?</div><hr>';
@@ -202,9 +202,50 @@ document.getElementById('js-add-new').addEventListener('click', function(){
   document.getElementById('contact-panel').style.display = 'block';
 });
 
+function del(i) {
+    var contact = "contact"+i;
+    document.getElementById(contact).innerHTML = "";
+    var contacts = contactList.returnAll();
+    contacts.splice(i, 1);
+    if(contacts.length==0){
+      document.getElementById('show-panel').innerHTML += '<div class="contact-item">You have no contacts. Why not add  a few?</div><hr>';
+    }
+  }
+ function number_validate(){
+     var reg1=document.getElementById("numberid");
+      var regno2= /[0-9]/;
+      if(regno2.test(myform.phone.value) && myform.phone.value.length >=10 ){
+        reg1.style.borderColor="green";
+        reg1.style.backgroundColor="";
+      }
+      else{
+        reg1.style.borderColor="red";
+        reg1.style.backgroundColor="red";
+    
+      }
+
+  }  
+
+
+  function mail_validate(){
+     var reg2=document.getElementById("mailid");
+      var  re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if(re.test(myform.email.value)){
+        reg2.style.borderColor="green";
+        reg2.style.backgroundColor="";
+      }
+      else{
+        reg2.style.borderColor="red";
+        reg2.style.backgroundColor="red";
+    
+      }
+
+    }
+
+
+
+
 </script>
-
-
 
 
 </body>

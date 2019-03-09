@@ -33,12 +33,11 @@ background-repeat:repeat;
 
 .panel{
 	text-align: center;
-
   padding:1em;
   width:89.5%;
   margin:auto;
   max-width:25em;
-  height: 15em;
+  /* height: auto; */
   position: absolute;
   top: 25%;
   color: rgb(200,200,200);
